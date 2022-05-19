@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    background-color: rgb(141, 233, 233);
+}
+
+.onex {
+    display: none;
+}
+
+.twox {
+    display: none;
+}
+
+.threex {
+    display: none;
+}
+
+#calculate {
+    display: none;
+}
+
+#clear {
+    display: none;
+}
+
+#result {
+    display: none;
+}
