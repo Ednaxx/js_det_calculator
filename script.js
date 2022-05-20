@@ -52,14 +52,16 @@ btn3.addEventListener("click", function check3(){
 //input only numbers and "."
 
 
-function isNumberKey(evt)
-{
-	var charCode = (evt.which) ? evt.which : evt.keyCode
-	if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
-	return false;
+//function isNumberKey(evt)
+//{
+//	var charCode = (evt.which) ? evt.which : evt.keyCode
+//	if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
+//	return false;
+//
+//	return true;
+//}
 
-	return true;
-}
+// on html inputs -> onkeypress="isNumberKey()"
 
 //clear button
 
@@ -76,39 +78,10 @@ clear.addEventListener("click", function(){
     result.style.display = "none"
 });
 
-//calculate vars
-
-var oneone2x2 = document.getElementById("211").value;
-var onetwo2x2 = document.getElementById("212").value;
-
-var twoone2x2 = document.getElementById("221").value;
-var twotwo2x2 = document.getElementById("222").value;
-
-
-var oneone3x3 = document.getElementById("311").value;
-var onetwo3x3 = document.getElementById("312").value;
-var onethree3x3 = document.getElementById("313").value;
-
-var twoone3x3 = document.getElementById("321").value;
-var twotwo3x3 = document.getElementById("322").value;
-var twothree3x3 = document.getElementById("323").value;
-
-var threeone3x3 = document.getElementById("331").value;
-var threetwo3x3 = document.getElementById("332").value;
-var threethree3x3 = document.getElementById("333").value;
-
-var diagonals = {
-    "dia1": (oneone3x3 *  twotwo3x3 * threethree3x3),
-    "dia2": (onetwo3x3 * twothree3x3 * threeone3x3),
-    "dia3": (onethree3x3 * twoone3x3 * threetwo3x3),
-    "diaMinus1": (onethree3x3 * twotwo3x3 * threeone3x3),
-    "diaMinus2": (oneone3x3 * twothree3x3 * threetwo3x3),
-    "diaMinus3": (onetwo3x3 * twoone3x3 * threethree3x3)
-}
-
 
 //calculate functions
 
+var det = 0
 
 function cal1(){
     if(mtrxnums1.value == ""){alert("Please fill the input.")}
@@ -119,23 +92,52 @@ function cal1(){
 };
 
 function cal2(){
+
+    var twooneone = document.getElementById("211").value;
+    var twoonetwo = document.getElementById("212").value;
+    
+    var twotwoone = document.getElementById("221").value;
+    var twotwotwo = document.getElementById("222").value;
+
     for(var j = 0; j < mtrxnums2.length; j++){
         if(mtrxnums2[j].value == ""){
             alert("Please fill the blank inputs.");
             break;
         }};
-    var det = (oneone2x2 * twotwo2x2) - (onetwo2x2 * twoone2x2);
+    det = (twooneone * twotwotwo) - (twoonetwo * twotwoone);
     result.style.display = "block";
     result.innerText = "Det = " + det;
         };
 
 function cal3(){
+
+    var threeoneone = document.getElementById("311").value;
+    var threeonetwo = document.getElementById("312").value;
+    var threeonethree = document.getElementById("313").value;
+
+    var threetwoone = document.getElementById("321").value;
+    var threetwotwo = document.getElementById("322").value;
+    var threetwothree = document.getElementById("323").value;
+
+    var threethreeone = document.getElementById("331").value;
+    var threethreetwo = document.getElementById("332").value;
+    var threethreethree = document.getElementById("333").value;
+
+    var diagonals = {
+        "dia1": (threeoneone *  threetwotwo * threethreethree),
+        "dia2": (threeonetwo * threetwothree * threethreeone),
+        "dia3": (threeonethree * threetwoone * threethreetwo),
+        "diaMinus1": (threeonethree * threetwotwo * threethreeone),
+        "diaMinus2": (threeoneone * threetwothree * threethreetwo),
+        "diaMinus3": (threeonetwo * threetwoone * threethreethree)
+    };
+
     for(var j = 0; j < mtrxnums3.length; j++){
         if(mtrxnums3[j].value == ""){
             alert("Please fill the blank inputs.");
             break;
         }};
-        var det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
+        det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
         result.style.display = "block";
         result.innerText = "Det = " + det;
 };
