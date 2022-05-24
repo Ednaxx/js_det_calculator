@@ -101,13 +101,15 @@ function cal2(){
 
     for(var j = 0; j < mtrxnums2.length; j++){
         if(mtrxnums2[j].value == ""){
+            result.style.display = "none";
             alert("Please fill the blank inputs.");
             break;
-        }};
-    det = (twooneone * twotwotwo) - (twoonetwo * twotwoone);
-    result.style.display = "block";
-    result.innerText = "Det = " + det;
-        };
+        }
+        else{
+            det = (twooneone * twotwotwo) - (twoonetwo * twotwoone);
+            result.style.display = "block";
+            result.innerText = "Det = " + det;
+        }}};
 
 function cal3(){
 
@@ -134,13 +136,15 @@ function cal3(){
 
     for(var j = 0; j < mtrxnums3.length; j++){
         if(mtrxnums3[j].value == ""){
+            result.style.display = "none";
             alert("Please fill the blank inputs.");
             break;
-        }};
-        det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
-        result.style.display = "block";
-        result.innerText = "Det = " + det;
-};
+        }
+        else{
+            det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
+            result.style.display = "block";
+            result.innerText = "Det = " + det;
+        }}};
 
 cal.addEventListener("click", function(){ 
     if(check[0].checked){cal1()};
