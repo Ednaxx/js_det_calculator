@@ -49,19 +49,64 @@ btn3.addEventListener("click", function check3(){
 });
 
 
-//input only numbers and "."
+//input grow with keys
 
+var normalsize;
+var sizemultiplier = 0;
+var newsize = 0
 
-//function isNumberKey(evt)
-//{
-//	var charCode = (evt.which) ? evt.which : evt.keyCode
-//	if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
-//	return false;
-//
-//	return true;
-//}
+//order 1
+mtrxnums1[0].addEventListener("keyup", function(){
+    if(mtrxnums1[0].value.length > 3){
 
-// on html inputs -> onkeypress="isNumberKey()"
+        if(mtrxnums1[0].value.length > sizemultiplier && newsize < 104){
+            sizemultiplier = mtrxnums1[0].value.length;
+
+            newsize = 50 + (sizemultiplier - 3)*18;
+
+            mtrxnums1[0].style.width = newsize + "px"
+        };
+    };
+});
+
+//order 2
+document.querySelectorAll(".mtrxnum2").forEach(function(item){
+    item.addEventListener("keyup", function(){
+    for(var p = 0; p < mtrxnums2.length; p++){
+        if(mtrxnums2[p].value.length > 3){
+            normalsize = false;
+
+            if(mtrxnums2[p].value.length > sizemultiplier && newsize < 104){
+                sizemultiplier = mtrxnums2[p].value.length;
+
+                newsize = 50 + (sizemultiplier - 3)*18;
+
+            for(var u = 0; u < mtrxnums2.length; u++){
+                mtrxnums2[u].style.width = newsize + "px"}
+            };
+        };
+    };
+});});
+
+//order3
+
+document.querySelectorAll(".mtrxnum3").forEach(function(item){
+    item.addEventListener("keyup", function(){
+    for(var p = 0; p < mtrxnums3.length; p++){
+        if(mtrxnums3[p].value.length > 3){
+            normalsize = false;
+
+            if(mtrxnums3[p].value.length > sizemultiplier && newsize < 104){
+                sizemultiplier = mtrxnums3[p].value.length;
+
+                newsize = 50 + (sizemultiplier - 3)*18;
+
+            for(var u = 0; u < mtrxnums3.length; u++){
+                mtrxnums3[u].style.width = newsize + "px"}
+            };
+        };
+    };
+});});
 
 //clear button
 
@@ -84,7 +129,7 @@ clear.addEventListener("click", function(){
 var det = 0
 
 function cal1(){
-    if(mtrxnums1.value == ""){alert("Please fill the input.")}
+    if(mtrxnums1[0].value == ""){alert("Please fill the input.")}
     else{
         result.style.display = "block"
         result.innerText = "Det = " + mtrxnums1[0].value;
@@ -151,4 +196,3 @@ cal.addEventListener("click", function(){
     if(check[1].checked){cal2()};
     if(check[2].checked){cal3()};
 });
-
