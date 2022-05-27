@@ -4,14 +4,14 @@ body {
 }
 
 .calculator {
-    background-color: rgba(0, 0, 0, 0.5);
     width: 50vw;
-    height: 800px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
 }
 
 .matrixorder {
@@ -24,19 +24,20 @@ body {
 
 .onex {
     display: none;
+    align-self: center;
+    margin-right: 50px;
 }
 
 .twox {
     display: none;
-}
-
-.twox .line1 {
-    list-style-type: none;
-    overflow: hidden;
+    align-self: center;
+    margin-right: 50px;
 }
 
 .threex {
     display: none;
+    align-self: center;
+    margin-right: 45px;
 }
 
 #calculate {
@@ -56,7 +57,13 @@ li {
 }
 
 li input {
+    background-color: rgba(205, 227, 230, 0.918);
+    text-align: center;
     width: 50px;
     height: 60px;
     font-size: 30px;
+}
+
+li input:hover {
+    background-color: rgba(205, 227, 230, 0.7);
 }

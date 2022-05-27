@@ -17,43 +17,73 @@ var check = document.getElementsByName("order");
 
 var result = document.getElementById("result");
 
+//clear function and button
+
+function clearFunction(){
+    for(var i = 0; i < mtrxnums1.length; i++){
+        mtrxnums1[i].value = "";
+        mtrxnums1[i].style.width = "50px";
+        sizemultiplier = 0;
+        newsize = 0;
+    };
+    for(i = 0; i < mtrxnums2.length; i++){
+        mtrxnums2[i].value = "";
+        mtrxnums2[i].style.width = "50px";
+        sizemultiplier = 0;
+        newsize = 0;
+    };
+    for(i = 0; i < mtrxnums3.length; i++){
+        mtrxnums3[i].value = "";
+        mtrxnums3[i].style.width = "50px";
+        sizemultiplier = 0;
+        newsize = 0;
+    };
+    result.style.display = "none"
+};
+
+clear.addEventListener("click", clearFunction);
 
 //event listeners
 
 btn1.addEventListener("click", function check1(){
     if(check[0].checked){
+        document.querySelector(".calculator").style.backgroundColor= "rgba(0, 0, 0, 0.5)";
         mtrx1[0].style.display = "block";
         mtrx2[0].style.display = "none";
         mtrx3[0].style.display = "none";
         cal.style.display = "inline";
         clear.style.display = "inline";
+        clearFunction();
     }
 });
 btn2.addEventListener("click", function check2(){
     if(check[1].checked){
+        document.querySelector(".calculator").style.backgroundColor= "rgba(0, 0, 0, 0.5)";
         mtrx1[0].style.display = "none";
         mtrx2[0].style.display = "block";
         mtrx3[0].style.display = "none";
         cal.style.display = "inline";
         clear.style.display = "inline";
+        clearFunction();
     }
 });
 btn3.addEventListener("click", function check3(){
     if(check[2].checked){
+        document.querySelector(".calculator").style.backgroundColor= "rgba(0, 0, 0, 0.5)";
         mtrx1[0].style.display = "none";
         mtrx2[0].style.display = "none";
         mtrx3[0].style.display = "block";
         cal.style.display = "inline";
         clear.style.display = "inline";
+        clearFunction();
     }
 });
 
 
-//input grow with keys
+//input grow with keys and 
 
-var normalsize;
 var sizemultiplier = 0;
-var newsize = 0
+var newsize = 0;
 
 //order 1
 mtrxnums1[0].addEventListener("keyup", function(){
@@ -74,7 +104,6 @@ document.querySelectorAll(".mtrxnum2").forEach(function(item){
     item.addEventListener("keyup", function(){
     for(var p = 0; p < mtrxnums2.length; p++){
         if(mtrxnums2[p].value.length > 3){
-            normalsize = false;
 
             if(mtrxnums2[p].value.length > sizemultiplier && newsize < 104){
                 sizemultiplier = mtrxnums2[p].value.length;
@@ -94,35 +123,18 @@ document.querySelectorAll(".mtrxnum3").forEach(function(item){
     item.addEventListener("keyup", function(){
     for(var p = 0; p < mtrxnums3.length; p++){
         if(mtrxnums3[p].value.length > 3){
-            normalsize = false;
 
             if(mtrxnums3[p].value.length > sizemultiplier && newsize < 104){
                 sizemultiplier = mtrxnums3[p].value.length;
 
                 newsize = 50 + (sizemultiplier - 3)*18;
-
+            };
             for(var u = 0; u < mtrxnums3.length; u++){
                 mtrxnums3[u].style.width = newsize + "px"}
-            };
+            
         };
     };
 });});
-
-//clear button
-
-clear.addEventListener("click", function(){
-    for(var i = 0; i < mtrxnums1.length; i++){
-        mtrxnums1[i].value = ""
-    };
-    for(i = 0; i < mtrxnums2.length; i++){
-        mtrxnums2[i].value = ""
-    };
-    for(i = 0; i < mtrxnums3.length; i++){
-        mtrxnums3[i].value = ""
-    };
-    result.style.display = "none"
-});
-
 
 //calculate functions
 
@@ -196,3 +208,14 @@ cal.addEventListener("click", function(){
     if(check[1].checked){cal2()};
     if(check[2].checked){cal3()};
 });
+
+//input press Enter to calculate
+
+document.querySelectorAll("li input").forEach(function(input) {
+    input.addEventListener("keyup", function(event){
+        if(event.keyCode == 13){
+            if(check[0].checked){cal1()};
+            if(check[1].checked){cal2()};
+            if(check[2].checked){cal3()};
+        }
+    })});
