@@ -51,14 +51,17 @@ btn3.addEventListener("click", function check3(){
 
 //input only numbers and "."
 
-function isNumberKey(evt)
-{
-	var charCode = (evt.which) ? evt.which : evt.keyCode
-	if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
-	return false;
 
-	return true;
-}
+//function isNumberKey(evt)
+//{
+//	var charCode = (evt.which) ? evt.which : evt.keyCode
+//	if (charCode > 31 && (charCode < 48 || charCode > 57) && charCode != 46)
+//	return false;
+//
+//	return true;
+//}
+
+// on html inputs -> onkeypress="isNumberKey()"
 
 //clear button
 
@@ -72,25 +75,76 @@ clear.addEventListener("click", function(){
     for(i = 0; i < mtrxnums3.length; i++){
         mtrxnums3[i].value = ""
     };
+    result.style.display = "none"
 });
 
-//calculate
+
+//calculate functions
+
+var det = 0
 
 function cal1(){
     if(mtrxnums1.value == ""){alert("Please fill the input.")}
     else{
         result.style.display = "block"
-        result.innerText = "Det = " + mtrxnums1.value;
+        result.innerText = "Det = " + mtrxnums1[0].value;
     };
 };
 
 function cal2(){
 
-};
+    var twooneone = document.getElementById("211").value;
+    var twoonetwo = document.getElementById("212").value;
+    
+    var twotwoone = document.getElementById("221").value;
+    var twotwotwo = document.getElementById("222").value;
+
+    for(var j = 0; j < mtrxnums2.length; j++){
+        if(mtrxnums2[j].value == ""){
+            result.style.display = "none";
+            alert("Please fill the blank inputs.");
+            break;
+        }
+        else{
+            det = (twooneone * twotwotwo) - (twoonetwo * twotwoone);
+            result.style.display = "block";
+            result.innerText = "Det = " + det;
+        }}};
 
 function cal3(){
 
-};
+    var threeoneone = document.getElementById("311").value;
+    var threeonetwo = document.getElementById("312").value;
+    var threeonethree = document.getElementById("313").value;
+
+    var threetwoone = document.getElementById("321").value;
+    var threetwotwo = document.getElementById("322").value;
+    var threetwothree = document.getElementById("323").value;
+
+    var threethreeone = document.getElementById("331").value;
+    var threethreetwo = document.getElementById("332").value;
+    var threethreethree = document.getElementById("333").value;
+
+    var diagonals = {
+        "dia1": (threeoneone *  threetwotwo * threethreethree),
+        "dia2": (threeonetwo * threetwothree * threethreeone),
+        "dia3": (threeonethree * threetwoone * threethreetwo),
+        "diaMinus1": (threeonethree * threetwotwo * threethreeone),
+        "diaMinus2": (threeoneone * threetwothree * threethreetwo),
+        "diaMinus3": (threeonetwo * threetwoone * threethreethree)
+    };
+
+    for(var j = 0; j < mtrxnums3.length; j++){
+        if(mtrxnums3[j].value == ""){
+            result.style.display = "none";
+            alert("Please fill the blank inputs.");
+            break;
+        }
+        else{
+            det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
+            result.style.display = "block";
+            result.innerText = "Det = " + det;
+        }}};
 
 cal.addEventListener("click", function(){ 
     if(check[0].checked){cal1()};

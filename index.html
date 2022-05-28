@@ -10,47 +10,47 @@
 <body>
     <div class="calculator">
         <form class="matrixorder">
-                <input type="radio" name="order" value="1x1" id="btn1">
+                <input type="radio" name="order" value="1x1" id="btn1"/>
                 <label>1x1</label>
 
-                <input type="radio" name="order" value="2x2" id="btn2">
+                <input type="radio" name="order" value="2x2" id="btn2"/>
                 <label>2x2</label>
 
-                <input type="radio" name="order" value="3x3" id="btn3">
+                <input type="radio" name="order" value="3x3" id="btn3"/>
                 <label>3x3</label>
 
         </form>
         <div class="onex">
             <ul class="line1">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum1"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum1"/></li>
 
         </div>
         <div class="twox">
             <ul class="line1">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum2"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum2"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum2" id="211"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum2" id="212"/></li>
             </ul>
             <ul class="line2">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum2"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum2"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum2" id="221"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum2" id="222"/></li>
             </ul>
             
         </div>
         <div class="threex">
             <ul class="line1">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="311"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="312"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="313"/></li>
             </ul>
             <ul class="line2">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="321"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="322"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="323"/></li>
             </ul>
             <ul class="line3">
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
-                <li><input type="text" onkeypress="return isNumberKey(event)" class="mtrxnum3"></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="331"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="332"/></li>
+                <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="333"/></li>
             </ul>
         </div>
         <div class="buttons">
