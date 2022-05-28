@@ -3,16 +3,45 @@ body {
     background-color: rgb(141, 233, 233);
 }
 
+.calculator {
+    width: 50vw;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.matrixorder {
+    align-self: center;
+    margin-top: 10px;
+}
+
+#matrices {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.buttons {
+    align-self: flex-end;
+}
+
 .onex {
     display: none;
+    margin-right: 50px;
 }
 
 .twox {
     display: none;
+    margin-right: 50px;
 }
 
 .threex {
     display: none;
+    margin-right: 45px;
 }
 
 #calculate {
@@ -25,4 +54,51 @@ body {
 
 #result {
     display: none;
+    font-size: 30px;
+    margin-right: 30px;
+    margin-bottom: 15px;
+    align-self: center;
+    background-color: rgba(205, 227, 230, 0.918);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+li {
+    display: inline;
+}
+
+li input {
+    background-color: rgba(205, 227, 230, 0.918);
+    text-align: center;
+    width: 50px;
+    height: 60px;
+    font-size: 30px;
+}
+
+li input:hover {
+    background-color: rgba(205, 227, 230, 0.7);
+}
+
+button {
+    margin: 5px;
+    background-color: rgba(205, 227, 230, 0.918);
+}
+
+button:hover {
+    background-color: rgba(205, 227, 230, 0.7);
+}
+
+#clear {
+    border-radius: 5px;
+    width: 70px;
+    height: 35px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+#calculate {
+    border-radius: 5px;
+    width: 90px;
+    height: 35px;
+    font-size: 15px;
 }
