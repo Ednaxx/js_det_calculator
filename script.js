@@ -143,7 +143,7 @@ var det = 0
 function cal1(){
     if(mtrxnums1[0].value == ""){alert("Please fill the input.")}
     else{
-        result.style.display = "block"
+        result.style.display = "inline"
         result.innerText = "Det = " + mtrxnums1[0].value;
     };
 };
@@ -164,7 +164,7 @@ function cal2(){
         }
         else{
             det = (twooneone * twotwotwo) - (twoonetwo * twotwoone);
-            result.style.display = "block";
+            result.style.display = "inline";
             result.innerText = "Det = " + det;
         }}};
 
@@ -199,7 +199,7 @@ function cal3(){
         }
         else{
             det = (diagonals.dia1 + diagonals.dia2 + diagonals.dia3) - (diagonals.diaMinus1 + diagonals.diaMinus2 + diagonals.diaMinus3)
-            result.style.display = "block";
+            result.style.display = "inline";
             result.innerText = "Det = " + det;
         }}};
 

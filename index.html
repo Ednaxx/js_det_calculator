@@ -18,8 +18,8 @@
 
                 <input type="radio" name="order" value="3x3" id="btn3"/>
                 <label>3x3</label>
-
         </form>
+        <div id="matrices">
         <div class="onex">
             <ul class="line1">
                 <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57' class="mtrxnum1"/></li>
@@ -53,11 +53,12 @@
                 <li><input type="text" onkeypress='return event.charCode == 46 || event.charCode >= 48 && event.charCode <= 57'  class="mtrxnum3" id="333"/></li>
             </ul>
         </div>
+        <p id="result"></p>
+    </div>
         <div class="buttons">
-            <Button id="calculate">Calculate</Button>
+            <button id="calculate">Calculate</button>
             <button id="clear">Clear</button>
         </div>
-        <p id="result"></p>
     </div>
 <script src="script.js"></script>
 </body>
